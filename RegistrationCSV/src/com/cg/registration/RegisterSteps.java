@@ -43,7 +43,7 @@ public class RegisterSteps {
 			mail = nextLine[2];
 			cNum = nextLine[3];
 			address = nextLine[4];
-			city = nextLine[5];
+			city1 = nextLine[5];
 			stateName = nextLine[6];
 		}
 		reader.close();

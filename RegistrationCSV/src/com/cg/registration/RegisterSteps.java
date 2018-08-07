@@ -29,7 +29,7 @@ public class RegisterSteps {
 	static String mail;
 	static String cNum;
 	static String address;
-	static String city;
+	static String city1;
 	static String stateName;
 
 	@Before
@@ -62,27 +62,27 @@ public class RegisterSteps {
 	@Given("^User enters valid details$")
 	public void user_enters_valid_details() throws Throwable {
 		WebElement fname = driver.findElement(By.id("fname"));
-		fname.sendKeys("sunitha");
+		fname.sendKeys(fName);
 		
 		WebElement lname = driver.findElement(By.id("lname"));
-		lname.sendKeys("sharma");
+		lname.sendKeys(lName);
 		
 		WebElement email = driver.findElement(By.id("email"));
-		email.sendKeys("sunithasharma20@gmail.com");
+		email.sendKeys(mail);
 		
 		WebElement number = driver.findElement(By.id("number"));
-		number.sendKeys("9566247900");
+		number.sendKeys(cNum);
 		
 		WebElement addr = driver.findElement(By.id("addr"));
-		addr.sendKeys("Gopalapuram 2nd street");
+		addr.sendKeys(address);
 		
 		WebElement city = driver.findElement(By.id("city"));
-		city.sendKeys("Chennai");
+		city.sendKeys(city1);
 		
 		WebElement state = driver.findElement(By.xpath("/html/body/form/select"));
-		state.sendKeys("TamilNadu");
+		state.sendKeys(stateName);
 		
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	 
 	}
 
@@ -90,7 +90,7 @@ public class RegisterSteps {
 	public void page_is_submitted() throws Throwable {
 		WebElement submit = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
 		submit.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 
 	@Given("^Alert message for validation is displayed$")
@@ -99,6 +99,7 @@ public class RegisterSteps {
 		System.out.println(alert.getText());
 		assertEquals("Details Validated",alert.getText());
 		alert.accept();
+		Thread.sleep(3000);
 	    
 	}
 
@@ -115,7 +116,7 @@ public class RegisterSteps {
 	   
 		WebElement size = driver.findElement(By.id("size"));
 		size.sendKeys("10");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
 	
 	@Given("^page is submitted for registeration$")
@@ -123,7 +124,7 @@ public class RegisterSteps {
 
 		WebElement submit = driver.findElement(By.id("submit"));
 		submit.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
 
 		
@@ -133,7 +134,7 @@ public class RegisterSteps {
 		Alert alert=driver.switchTo().alert();
 		System.out.println(alert.getText());
 		assertEquals("Registration Successful",alert.getText());
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		alert.accept();
 		
 	}
